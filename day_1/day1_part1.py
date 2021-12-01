@@ -1,3 +1,5 @@
+from timeit import default_timer as timer
+
 from input_helper import *
 
 
@@ -10,7 +12,7 @@ def solve():
     while i < (len(input_list) - 1):
 
         previous_element = input_list[i]
-        next_element = input_list[i+1]
+        next_element = input_list[i + 1]
 
         # print("From %d to %d ", previous_element, next_element)
 
@@ -19,8 +21,12 @@ def solve():
 
         i += 1
 
-    print("Depth Increased "+str(increases)+" times")
+    print("Depth Increased " + str(increases) + " times")
 
 
 if __name__ == "__main__":
+    start = timer()
     solve()
+    end = timer()
+    elapsed = round((end - start), 5)
+    print("solved in {} seconds".format(elapsed))
