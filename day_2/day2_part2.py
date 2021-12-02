@@ -15,13 +15,16 @@ def solve():
         direction = input[0]
         value = int(input[1])
 
-        if direction == "forward":
-            coord[0] += value
-            coord[1] += (value * aim)
-        elif direction == "up":
-            aim -= value
-        elif direction == "down":
-            aim += value
+        match direction:
+            case "forward":
+                coord[0] += value
+                coord[1] += (value * aim)
+
+            case "up":
+                aim -= value
+
+            case "down":
+                aim += value
 
     print(coord)
     print(coord[0] * coord[1])
