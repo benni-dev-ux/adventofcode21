@@ -7,6 +7,7 @@ def solve():
     input_list = read_input('input.txt')
     # X and Z coordinates
     coord = [0, 0]
+    aim = 0
 
     for i in input_list:
 
@@ -16,10 +17,11 @@ def solve():
 
         if direction == "forward":
             coord[0] += value
+            coord[1] += (value * aim)
         elif direction == "up":
-            coord[1] -= value
+            aim -= value
         elif direction == "down":
-            coord[1] += value
+            aim += value
 
     print(coord)
     print(coord[0] * coord[1])
