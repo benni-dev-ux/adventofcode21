@@ -11,7 +11,7 @@ def solve():
         x = [int(a) for a in str(i)]
         input_seperated.append(x)
 
-    gamma_rate = binary_most_common(input_seperated)
+    gamma_rate = binary_most_common_column(input_seperated)
     gamma_str = ''.join(map(str, gamma_rate))
     epsilon_rate = invert_binary(gamma_rate)
     epsilon_str = ''.join(map(str, epsilon_rate))
@@ -33,7 +33,7 @@ def invert_binary(input):
     return output
 
 
-def binary_most_common(input):
+def binary_most_common_column(input):
     line_length = 12
     input_length = len(input)
     digit = 0
