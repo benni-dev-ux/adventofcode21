@@ -6,7 +6,7 @@ from input_helper import *
 
 
 def resolve_vent_lines(arr, grid):
-    # create empty array with the shape of input arr
+    # iterate over array with line coordinates
     for line in arr:
         ho_diff = line[0] - line[2]
         ve_diff = line[1] - line[3]
@@ -20,6 +20,7 @@ def resolve_vent_lines(arr, grid):
                 start = end
                 ho_diff *= -1
             for i in range(ho_diff + 1):
+                # mark horizontal lines in grid
                 grid[line[1], start - i] += 1
 
         if ve_diff != 0:
@@ -31,6 +32,7 @@ def resolve_vent_lines(arr, grid):
                 start = end
                 ve_diff *= -1
             for i in range(ve_diff + 1):
+                # mark vertical lines in grid
                 grid[start - i, line[0]] += 1
     return grid
 
