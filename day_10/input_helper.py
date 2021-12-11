@@ -1,7 +1,10 @@
 def read_input(filename):
     '''reading text file line by line'''
     with open(filename) as f:
-        return [int(line) for line in f.read().splitlines()]
+        result=[]
+        for line in f.read().splitlines():
+         result.append([str(a) for a in str(line)])
+        return result
 
 
 def read_input_single_line(filename):
