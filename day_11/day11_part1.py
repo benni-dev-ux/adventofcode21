@@ -98,7 +98,7 @@ def solve():
         reset_flashed(grid)
         # print_debug(grid, i+1)
 
-    print(f"Flashes after {steps} steps: {flashes}")
+    print(f"Flashes after {flashes} steps: {steps}")
 
 
 if __name__ == "__main__":
