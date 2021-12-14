@@ -11,46 +11,43 @@ def solve():
 
     for input in input_list:
         queue = []
-        char_counter=[0,0,0,0]
+        char_counter = [0, 0, 0, 0]
         for digit in input:
+            print(digit)
 
-           match digit:
+            match digit:
                 case"(":
-                    char_counter[0]+=1
+                    char_counter[0] += 1
                 case"[":
-                    char_counter[1]+=1
+                    char_counter[1] += 1
                 case"{":
-                    char_counter[2]+=1
+                    char_counter[2] += 1
                 case"<":
-                    char_counter[3]+=1
+                    char_counter[3] += 1
                 case")":
-                    char_counter[0]-=1
-                    if char_counter[0]<0:
+                    char_counter[0] -= 1
+                    if char_counter[0] < 0:
                         print("found ) ")
-                        score+=3
-                        #break
+                        score += 3
+                        # break
                 case"]":
-                    char_counter[1]-=1
-                    if char_counter[1]<0:
+                    char_counter[1] -= 1
+                    if char_counter[1] <= 0:
                         print("found ] ")
-                        score+=57
+                        score += 57
                        # break
                 case"}":
-                    char_counter[2]-=1
-                    if char_counter[2]<0:
+                    char_counter[2] -= 1
+                    if char_counter[2] <= 0:
                         print("found} ")
-                        score+=1197
+                        score += 1197
                        # break
                 case">":
-                    char_counter[3]-=1
-                    if char_counter[3]<0:
+                    char_counter[3] -= 1
+                    if char_counter[3] <= 0:
                         print("found> ")
-                        score+=25137
+                        score += 25137
                        # break
-
-         
-
-
 
     print(score)
 
