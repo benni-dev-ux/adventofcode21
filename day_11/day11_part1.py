@@ -21,7 +21,7 @@ def print_debug(grid, steps):
 
 def reset_flashed(grid):
     for row in range(len(grid)):
-        for col in range(len(grid)):
+        for col in range(len(grid[0])):
             if grid[row][col] > 9:
                 grid[row][col] = 0
 
@@ -29,7 +29,7 @@ def reset_flashed(grid):
 def flash(grid):
     flashes = 0
     for row in range(len(grid)):
-        for col in range(len(grid)):
+        for col in range(len(grid[0])):
 
             to_visit = []
             to_visit.append(Point(row, col))
@@ -98,7 +98,7 @@ def solve():
         reset_flashed(grid)
         # print_debug(grid, i+1)
 
-    print(f"Flashes after {flashes} steps: {steps}")
+    print(f"Flashes after {steps} steps: {flashes}")
 
 
 if __name__ == "__main__":

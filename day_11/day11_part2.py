@@ -22,7 +22,7 @@ def print_debug(grid, steps):
 def reset_flashed(grid, amount):
     counter = 0
     for row in range(len(grid)):
-        for col in range(len(grid)):
+        for col in range(len(grid[0])):
             if grid[row][col] > 9:
                 counter += 1
                 grid[row][col] = 0
@@ -33,7 +33,7 @@ def reset_flashed(grid, amount):
 def flash(grid):
     flashes = 0
     for row in range(len(grid)):
-        for col in range(len(grid)):
+        for col in range(len(grid[0])):
 
             to_visit = []
             to_visit.append(Point(row, col))
