@@ -6,7 +6,7 @@ from input_helper import *
 
 
 def shoot_probe(x_vel, y_vel, x_target, y_target):
-    max_y = -99999999
+    max_y = -99999999999
     x = 0
     y = 0
     pastTarget = False
@@ -30,7 +30,7 @@ def shoot_probe(x_vel, y_vel, x_target, y_target):
 
         y_vel -= 1
 
-    return -99999999
+    return -99999999999
 
 
 def solve():
@@ -51,17 +51,21 @@ def solve():
     print(x_target)
     print(y_target)
 
-    max_height = -99999999
+    max_height = -99999999999
     brute_force_target = 500
 
     for y in tqdm(range(y_target[0], brute_force_target)):
-        for x in range(1, x_target[1]):
+        for x in range(1, x_target[1] + 1):
+
             height = shoot_probe(x, y, x_target, y_target)
 
             if height > max_height:
+                print("Setting new height")
                 max_height = height
+                print(max_height)
 
     print(max_height)
+
 
 
 if __name__ == "__main__":
