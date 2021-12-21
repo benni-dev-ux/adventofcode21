@@ -9,11 +9,9 @@ def roll(position, dice, dice_rolls):
         if dice == 100 + 1:
             dice = 1
         position += dice
-        # print("rolling "+str(dice))
 
-        position = position % 10
-        if position == 0:
-            position = 10
+        # TIL You can do this in python
+        position = position % 10 or 10
 
     return position, dice, dice_rolls + 3
 
@@ -37,7 +35,7 @@ def solve():
 
         if p1_score >= 1000:
             print(f"P1 {p1_score} P2 {p2_score}")
-            print(f"Dice Rolled * P2 =   {p2_score*dice_rolls}")
+            print(f"Dice Rolled * P2 =   {p2_score * dice_rolls}")
 
             break
 
